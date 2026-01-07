@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <>
-      <Router>
+      <Router basename="/eb-vite-portfolio">
         <NavBar />
         <Routes>
           <Route path="/about" element={<About />} />
