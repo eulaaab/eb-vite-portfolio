@@ -32,14 +32,6 @@ p {
   margin-top: 3.5rem;
 }
 
-/* .navbar.is-fixed-top {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 30;
-} */
-
 .footer.py-2 {
   position: fixed;
   bottom: 0;

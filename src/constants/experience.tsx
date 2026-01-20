@@ -58,23 +58,23 @@ export const experience = [
   {
     company: companies.UDACITY,
     position: positions.STUDENT,
-    startDate: "November 2020",
-    endDate: "July 2020",
+    startDate: "July 2020",
+    endDate: "November 2020",
     description:
       "Took an online React Nanodegree program in a self-paced setting.",
   },
   {
     company: companies.BRAINSTATION,
     position: positions.TEACHING_ASSISTANT,
-    startDate: "August 2020",
-    endDate: "May 2020",
+    startDate: "May 2020",
+    endDate: "August 2020",
     description: "",
   },
   {
     company: companies.BRAINSTATION,
     position: positions.STUDENT,
-    startDate: "April 2020",
-    endDate: "January 2020",
+    startDate: "January 2020",
+    endDate: "April 2020",
     description:
       "My first experience with web development. Studied web development full-time.",
   },

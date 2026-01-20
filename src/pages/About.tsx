@@ -21,20 +21,8 @@ const About = () => {
               Toronto, Canada. I enjoy building beautiful and user friendly
               websites to elevate user experience through visuals and
               interactions. I light up collaborative environments with my bright
-              energy where I can learn, share and be myself. I'm currently
-              building the{" "}
-              <span>
-                <a
-                  href="https://pro.joistapp.com/login"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-controls="dropdown-menu4"
-                >
-                  {" "}
-                  Joist web app{" "}
-                </a>
-              </span>{" "}
-              making contractors heroes, by EverPro, an{" "}
+              energy where I can learn, share and be myself. I currently work
+              for EverPro, an{" "}
               <span className="dropdown is-hoverable">
                 <a
                   aria-label="EverCommerce"
@@ -53,24 +41,17 @@ const About = () => {
                   </span>
                 </span>
               </span>{" "}
-              company, where I help build the{" "}
-              <span className="dropdown is-hoverable">
+              company, building{" "}
+              <span>
                 <a
-                  aria-label="Joist"
-                  href="https://www.evercommerce.com/software/joist/
-"
+                  href="https://pro.joistapp.com/login"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-controls="dropdown-menu4"
                 >
-                  Joist app
+                  {" "}
+                  Joist
                 </a>
-                <span className="dropdown-menu" id="dropdown-menu4" role="menu">
-                  <span className="dropdown-content">
-                    <span className="dropdown-item">
-                      <p>Joist Software</p>
-                    </span>
-                  </span>
-                </span>
               </span>
               , an invoice and estimate app as part of the web team.
             </p>
