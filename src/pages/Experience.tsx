@@ -1,21 +1,10 @@
-import { useState, useEffect } from "react";
 import { years, experience } from "../constants/experience";
 import classes from "./Experience.module.scss";
 import cs from "classnames";
+import { useIsMobile } from "../hooks/useIsMobile";
 
 const Experience = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const isMobile = useIsMobile();
 
   // Extract year from startDate (e.g., "April 2020" -> "2020")
   const getYearFromDate = (dateString: string): string => {
@@ -70,15 +59,16 @@ const Experience = () => {
   })();
 
   return (
-    <div className={cs(classes.experience, "mx-5")}>
-      {/* <div className={cs(classes.experience, "container")}> */}
+    // <div className={cs(classes.experience, "mx-5")}>
+    // <div className={cs(classes.experience, "mx-5 is-flex is-flex-direction-column is-justify-content-center is-align-items-center")}>
+    <div className={cs(classes.experience, "mx-5 is-justify-content-center")}>
       <div>
         <h4>What I've Been Up to Throughout the Years</h4>
         <nav className="breadcrumb is-centered" aria-label="breadcrumbs">
           <ul>
             {years?.map((year: string, index: number) => {
               return (
-                <li key={index}>
+           <li key={index}>
                   <a
                     href={`#${year}`}
                     onClick={(e) => handleYearClick(e, year)}
@@ -101,7 +91,7 @@ const Experience = () => {
       {grouped.map((group, groupIdx) => {
         const multiple = group.entries.length > 1;
         return (
-          <div key={`${group.company}-${groupIdx}`} className="my-5">
+          <div key={`${group.company}-${groupIdx}`} className="my-5" style={{ width: "100%", maxWidth: "800px" }}>
             <div className="card">
               <div className="card-content">
                 <div className="content">

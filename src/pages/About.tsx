@@ -1,13 +1,17 @@
 import eula from "../assets/eb.jpg";
 import eulaSkydive from "../assets/eb-skydive.png";
+import styles from "./About.module.scss";
+import cs from "classnames";
+import { useIsMobile } from "../hooks/useIsMobile";
+
 const About = () => {
-  console.log("About");
+  const isMobile = useIsMobile();
   return (
-    <>
-      <div className="columns is-vcentered">
+    <div className={cs(`mb-6 is-justify-content-center`, isMobile ? styles.mobileContainer : styles.desktopContainer)}>
+      <div className={`columns is-vcentered ${isMobile ? "" : styles.container}`}>
         {/* Image */}
         <div className="column is-full-mobile is-half-tablet has-text-centered">
-          <figure className="image is-128x128" style={{ margin: "0 auto" }}>
+          <figure className={cs("image", isMobile ? "is-128x128" : styles.desktopImage)} style={{ margin: "0 auto" }}>
             <img src={eula} alt="eula headshot" className="is-rounded" />
           </figure>
         </div>
@@ -59,14 +63,15 @@ const About = () => {
         </div>
       </div>
 
-      <div className="columns is-vcentered">
-        <div className="column is-full-mobile is-half-tablet has-text-centered">
+      <div className={`column is-full-width is-vcentered ${isMobile ? "mb-6" : ""}`}>
+        <div className="column is-full-width has-text-centered">
           <h3 className="title is-3">A little backstory...</h3>
-          <figure className="image is-128x128" style={{ margin: "0 auto" }}>
+          <figure className={cs("image", isMobile ? "is-128x128": styles.desktopImage)} style={{ margin: "0 auto" }}>
             <img src={eulaSkydive} alt="eula skydive" className="is-rounded" />
           </figure>
         </div>
-        <div className="column is-full-mobile is-half-tablet">
+        {/* <div className="column is-full-mobile is-half-tablet"> */}
+        <div className="column is-full-width">
           <div className="content">
             <p className="is-size-5 block">
               I'm a highly-motivated individual who loves to explore and try new
@@ -94,7 +99,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

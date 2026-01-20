@@ -3,7 +3,6 @@ import { faLinkedinIn, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faFile, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
-  console.log("footer");
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -15,9 +14,9 @@ const Footer = () => {
   return (
     <>
       <footer className="footer py-2 footer-content">
-        <div className="is-flex is-flex-direction-column is-align-items-center">
+        <div className="is-flex is-flex-direction-column">
           <div className="is-flex is-justify-content-space-between">
-            <div className="is-flex is-justify-content-center">
+            <div className="is-flex">
               <a
                 href="https://www.linkedin.com/in/eulabengco/"
                 target="_blank"
@@ -41,6 +40,7 @@ const Footer = () => {
               aria-label="Scroll to top"
               style={{ cursor: "pointer", maxHeight: "min-content" }}
               role="button"
+              className="is-hidden-desktop"
             >
               <FontAwesomeIcon icon={faArrowUp} />
             </div>

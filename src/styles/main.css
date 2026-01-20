@@ -11,9 +11,13 @@ body {
     Ubuntu, Cantarell, sans-serif;
 }
 
+#root {
+  width: 100%;
+}
+
 /* Example custom class */
 .custom-container {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
   padding: 20px;
 }

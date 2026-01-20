@@ -8,9 +8,11 @@ import {
   faRectangleList,
   faToolbox,
 } from "@fortawesome/free-solid-svg-icons";
+import { useIsMobile } from "../../hooks/useIsMobile";
 
 const NavBar = () => {
   const [isActive, setIsActive] = useState(false);
+  const isMobile = useIsMobile();
 
   const toggleMenu = () => {
     setIsActive(!isActive);
@@ -27,7 +29,7 @@ const NavBar = () => {
       aria-label="main navigation"
     >
       <div className="navbar-brand">
-        <a className="navbar-item" href="/">
+        <a className="navbar-item is-size-4" href="/">
           Eula Bengco{" "}
         </a>
         <a
@@ -53,7 +55,7 @@ const NavBar = () => {
             to="/about"
             onClick={hideMenu}
           >
-            <FontAwesomeIcon icon={faInfo} className="mr-2" />
+            <FontAwesomeIcon icon={faInfo} className={cs(isMobile ? "mr-2" : "")} />
             About
           </Link>
           <Link
@@ -61,7 +63,7 @@ const NavBar = () => {
             to="/experience"
             onClick={hideMenu}
           >
-            <FontAwesomeIcon icon={faRectangleList} className="mr-2" />
+            <FontAwesomeIcon icon={faRectangleList} className={cs(isMobile ? "mr-2" : "")} />
             Experience
           </Link>
           <Link
@@ -69,7 +71,7 @@ const NavBar = () => {
             to="/skills"
             onClick={hideMenu}
           >
-            <FontAwesomeIcon icon={faToolbox} className="mr-2" />
+            <FontAwesomeIcon icon={faToolbox} className={cs(isMobile ? "mr-2" : "")} />
             Skills
           </Link>
         </div>
