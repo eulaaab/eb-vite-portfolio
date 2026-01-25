@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faInfo,
   faRectangleList,
-  faToolbox,
 } from "@fortawesome/free-solid-svg-icons";
 import { useIsMobile } from "../../hooks/useIsMobile";
 
