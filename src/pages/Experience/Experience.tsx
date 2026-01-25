@@ -26,13 +26,6 @@ const Experience = () => {
     }
   };
 
-  // Helper function to remove dash and number suffix from jobId
-  const cleanJobId = (jobId: string | undefined): string => {
-    if (!jobId) return '';
-    // Remove pattern like "-3" or "-123" from the end of the string
-    return jobId.replace(/-\d+$/, '');
-  };
-
   // Helper function to get the first word of a company name
   const getFirstWord = (text: string): string => {
     if (!text) return '';
@@ -104,7 +97,6 @@ const Experience = () => {
 
       {grouped.map((group, groupIdx) => {
         const multiple = group.entries.length > 1;
-        const cleanedJobId = cleanJobId(`${group.company}-${groupIdx}`);
         const firstWord = getFirstWord(group.company);
           
         return (
