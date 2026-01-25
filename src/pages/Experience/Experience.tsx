@@ -1,7 +1,8 @@
-import { years, experience } from "../constants/experience";
+import { years, experience } from "../../constants/experience";
 import classes from "./Experience.module.scss";
 import cs from "classnames";
-import { useIsMobile } from "../hooks/useIsMobile";
+import { Link } from "react-router-dom";
+import { useIsMobile } from "../../hooks/useIsMobile";
 
 const Experience = () => {
   const isMobile = useIsMobile();
@@ -23,6 +24,19 @@ const Experience = () => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
+  };
+
+  // Helper function to remove dash and number suffix from jobId
+  const cleanJobId = (jobId: string | undefined): string => {
+    if (!jobId) return '';
+    // Remove pattern like "-3" or "-123" from the end of the string
+    return jobId.replace(/-\d+$/, '');
+  };
+
+  // Helper function to get the first word of a company name
+  const getFirstWord = (text: string): string => {
+    if (!text) return '';
+    return text.split(' ')[0].toLowerCase();
   };
 
   // Precompute first occurrence index for each year
@@ -90,6 +104,9 @@ const Experience = () => {
 
       {grouped.map((group, groupIdx) => {
         const multiple = group.entries.length > 1;
+        const cleanedJobId = cleanJobId(`${group.company}-${groupIdx}`);
+        const firstWord = getFirstWord(group.company);
+          
         return (
           <div key={`${group.company}-${groupIdx}`} className="my-5" style={{ width: "100%", maxWidth: "800px" }}>
             <div className="card">
@@ -122,7 +139,9 @@ const Experience = () => {
                     );
                   })}
                 </div>
-                {/* <p>More info</p> */}
+                <Link to={`/experience/${firstWord}`} className="more-info-btn">
+                More info
+                </Link>
               </div>
             </div>
           </div>

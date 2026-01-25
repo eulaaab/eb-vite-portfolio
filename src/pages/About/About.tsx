@@ -1,8 +1,8 @@
-import eula from "../assets/eb.jpg";
-import eulaSkydive from "../assets/eb-skydive.png";
+import eula from "assets/eb.jpg";
+import eulaSkydive from "assets/eb-skydive.png";
 import styles from "./About.module.scss";
 import cs from "classnames";
-import { useIsMobile } from "../hooks/useIsMobile";
+import { useIsMobile } from "hooks/useIsMobile";
 
 const About = () => {
   const isMobile = useIsMobile();

@@ -11,12 +11,4 @@
   .item {
     color: white;
   }
-
-  .iconMarginMobile {
-    margin-right: 0.5rem;
-
-    @media screen and (min-width: 1024px) {
-      margin-right: 0;
-    }
-  }
 }

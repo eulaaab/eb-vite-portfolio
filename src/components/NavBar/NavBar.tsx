@@ -24,7 +24,7 @@ const NavBar = () => {
 
   return (
     <nav
-      className="navbar is-fixed-top"
+      className="navbar is-fixed-top mb-4"
       role="navigation"
       aria-label="main navigation"
     >
@@ -65,14 +65,6 @@ const NavBar = () => {
           >
             <FontAwesomeIcon icon={faRectangleList} className={cs(isMobile ? "mr-2" : "")} />
             Experience
-          </Link>
-          <Link
-            className={cs(classes.item, "navbar-item")}
-            to="/skills"
-            onClick={hideMenu}
-          >
-            <FontAwesomeIcon icon={faToolbox} className={cs(isMobile ? "mr-2" : "")} />
-            Skills
           </Link>
         </div>
       </div>
