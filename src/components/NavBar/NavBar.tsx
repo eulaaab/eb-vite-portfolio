@@ -29,9 +29,9 @@ const NavBar = () => {
       aria-label="main navigation"
     >
       <div className="navbar-brand">
-        <a className="navbar-item is-size-4" href="/">
+        <Link className="navbar-item is-size-4" to="/">
           Eula Bengco{" "}
-        </a>
+        </Link>
         <a
           className={`navbar-burger burger ${isActive ? "is-active" : ""}`}
           role="button"

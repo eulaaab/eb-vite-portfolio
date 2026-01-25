@@ -11,7 +11,11 @@ import ExperienceDetails from "./pages/ExperienceDetails";
 function App() {
   return (
     <>
-      <Router basename="/eb-vite-portfolio">
+      <Router
+        basename={
+          import.meta.env.BASE_URL.replace(/\/$/, "") || "/"
+        }
+      >
         <NavBar />
         <Routes>
           <Route path="/about" element={<About />} />
